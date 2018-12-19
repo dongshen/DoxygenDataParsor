@@ -1,4 +1,4 @@
-package sdong.doxygen_parse;
+package sdong.doxygen.parser;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
