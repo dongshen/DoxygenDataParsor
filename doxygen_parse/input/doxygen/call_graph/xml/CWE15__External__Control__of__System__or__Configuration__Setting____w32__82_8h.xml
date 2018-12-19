@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82_8h" kind="file" language="C++">
+    <compoundname>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h</compoundname>
+    <includes local="yes">std_testcase.h</includes>
+    <includedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82__bad_8cpp" local="yes">example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_bad.cpp</includedby>
+    <includedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82__goodG2B_8cpp" local="yes">example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B.cpp</includedby>
+    <includedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82a_8cpp" local="yes">example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82a.cpp</includedby>
+    <incdepgraph>
+      <node id="109">
+        <label>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>std_testcase.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="112">
+        <label>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_bad.cpp</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82__bad_8cpp"/>
+      </node>
+      <node id="111">
+        <label>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82a.cpp</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82a_8cpp"/>
+      </node>
+      <node id="113">
+        <label>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B.cpp</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82__goodG2B_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exterc1630649ac00d2ff6fdc69a52bb102b2" prot="public">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_base</innerclass>
+    <innerclass refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exter87beb84b3a39a28f9c460c695d0a3b58" prot="public">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_bad</innerclass>
+    <innerclass refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exter08a945bf978e15c5062b7350586f418f" prot="public">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B</innerclass>
+    <innernamespace refid="namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__82">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_53f6ed49dfa95cc10c209fe1a27afc2e" kind="dir">
+    <compoundname>example/CWE</compoundname>
+    <innerdir refid="dir_750b4a0e5647d2b911228c4c680dab94">example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="example/CWE/"/>
+  </compounddef>
+</doxygen>

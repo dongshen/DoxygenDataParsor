@@ -1,0 +1,13 @@
+digraph "CWE15_External_Control_of_System_or_Configuration_Setting__w32_53_bad"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_53_bad",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_53b_badSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__53a_8c.html#a12e1f036eac5cd94233d891566c0ae9a"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_53c_badSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__53b_8c.html#ad64a78d233bfe1551d351c3f851e8cb6"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_53d_badSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__53c_8c.html#a0b111cc5d92a2cd3ed77d8994c62aa49"];
+}

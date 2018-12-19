@@ -1,0 +1,11 @@
+digraph "CWE15_External_Control_of_System_or_Configuration_Setting__w32_53b_goodG2BSink"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node6 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_53b_goodG2BSink",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_53c_goodG2BSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__53b_8c.html#aa7f4df223585be58bd79349b721bd907"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_53d_goodG2BSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__53c_8c.html#a5bc3ecfeb6a5c396bc0ddb3075aa41ed"];
+}

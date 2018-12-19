@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82__bad_8cpp" kind="file" language="C++">
+    <compoundname>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_bad.cpp</compoundname>
+    <includes local="yes">std_testcase.h</includes>
+    <includes refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82_8h" local="yes">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h</includes>
+    <includes local="no">windows.h</includes>
+    <incdepgraph>
+      <node id="115">
+        <label>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_bad.cpp</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82__bad_8cpp"/>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>windows.h</label>
+      </node>
+      <node id="117">
+        <label>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82_8h"/>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>std_testcase.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__82">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_bad.cpp"/>
+  </compounddef>
+</doxygen>

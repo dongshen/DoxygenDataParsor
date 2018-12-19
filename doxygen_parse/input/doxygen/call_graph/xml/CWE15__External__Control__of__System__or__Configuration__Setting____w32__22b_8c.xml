@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c" kind="file" language="C++">
+    <compoundname>CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c</compoundname>
+    <includes local="yes">std_testcase.h</includes>
+    <includes local="no">winsock2.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>winsock2.h</label>
+      </node>
+      <node id="5">
+        <label>std_testcase.h</label>
+      </node>
+      <node id="4">
+        <label>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a4fba0963c20988d1f1a45afb1c636e44" prot="public" static="no">
+        <name>LISTEN_PORT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" line="22" column="9" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a848750161824c5aa011ed0442ec0863c" prot="public" static="no">
+        <name>LISTEN_BACKLOG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" line="23" column="9" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a9700fd388f4f05ad3d5fa9b5a80e66d0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_badGlobal</definition>
+        <argsstring></argsstring>
+        <name>CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_badGlobal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" line="28" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22a.c" bodystart="24" bodyend="-1"/>
+        <referencedby refid="testcases_8h_1a5c68fe5c6a56d9f243f06fe949cfe485" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c" startline="28" endline="41">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_bad</referencedby>
+        <referencedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a17e4a785bc89dbd83816bb91d3e634fd" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c" startline="30" endline="105">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_badSource</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a9ecde5e997da0ec1b8bc53de67a85d0c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B1Global</definition>
+        <argsstring></argsstring>
+        <name>CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B1Global</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" line="112" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22a.c" bodystart="48" bodyend="-1"/>
+        <referencedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c_1ac17d0de842dabc80fcf4a7c075312c3c" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c" startline="54" endline="67">goodG2B1</referencedby>
+        <referencedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a95b1967d57f6342a39262d7e22a9a9d2" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c" startline="116" endline="129">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B1Source</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1aa92f0098b6fbc5f043bfe38a5f14a5a3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B2Global</definition>
+        <argsstring></argsstring>
+        <name>CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B2Global</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" line="113" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22a.c" bodystart="49" bodyend="-1"/>
+        <referencedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c_1ae6b951ee594ed81470250b3195e42869" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c" startline="72" endline="85">goodG2B2</referencedby>
+        <referencedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a39c897fe0df655c77953b1038e4d6e7f" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c" startline="132" endline="140">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B2Source</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a17e4a785bc89dbd83816bb91d3e634fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_badSource</definition>
+        <argsstring>(char *data)</argsstring>
+        <name>CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_badSource</name>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" line="30" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" bodystart="30" bodyend="105"/>
+        <references refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a9700fd388f4f05ad3d5fa9b5a80e66d0" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c" startline="24">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_badGlobal</references>
+        <references refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a4fba0963c20988d1f1a45afb1c636e44" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c" startline="22">LISTEN_PORT</references>
+        <references refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a848750161824c5aa011ed0442ec0863c" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c" startline="23">LISTEN_BACKLOG</references>
+        <referencedby refid="testcases_8h_1a5c68fe5c6a56d9f243f06fe949cfe485" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c" startline="28" endline="41">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_bad</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a95b1967d57f6342a39262d7e22a9a9d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B1Source</definition>
+        <argsstring>(char *data)</argsstring>
+        <name>CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B1Source</name>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" line="116" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" bodystart="116" bodyend="129"/>
+        <references refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a9ecde5e997da0ec1b8bc53de67a85d0c" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c" startline="48">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B1Global</references>
+        <referencedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c_1ac17d0de842dabc80fcf4a7c075312c3c" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c" startline="54" endline="67">goodG2B1</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a39c897fe0df655c77953b1038e4d6e7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B2Source</definition>
+        <argsstring>(char *data)</argsstring>
+        <name>CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B2Source</name>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" line="132" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c" bodystart="132" bodyend="140"/>
+        <references refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1aa92f0098b6fbc5f043bfe38a5f14a5a3" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c" startline="49">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B2Global</references>
+        <referencedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c_1ae6b951ee594ed81470250b3195e42869" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c" startline="72" endline="85">goodG2B2</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c"/>
+  </compounddef>
+</doxygen>

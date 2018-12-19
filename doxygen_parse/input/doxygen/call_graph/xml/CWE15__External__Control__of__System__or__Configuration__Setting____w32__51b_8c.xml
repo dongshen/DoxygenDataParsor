@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51b_8c" kind="file" language="C++">
+    <compoundname>CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c</compoundname>
+    <includes local="yes">std_testcase.h</includes>
+    <includes local="no">winsock2.h</includes>
+    <includes local="no">windows.h</includes>
+    <incdepgraph>
+      <node id="13">
+        <label>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51b_8c"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>windows.h</label>
+      </node>
+      <node id="15">
+        <label>winsock2.h</label>
+      </node>
+      <node id="14">
+        <label>std_testcase.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51b_8c_1a4fba0963c20988d1f1a45afb1c636e44" prot="public" static="no">
+        <name>LISTEN_PORT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c" line="22" column="9" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51b_8c_1a848750161824c5aa011ed0442ec0863c" prot="public" static="no">
+        <name>LISTEN_BACKLOG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c" line="23" column="9" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51b_8c_1a4358abea45812c72fa5dafc3414f3dab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b_badSink</definition>
+        <argsstring>(char *data)</argsstring>
+        <name>CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b_badSink</name>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c" line="31" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c" bodystart="31" bodyend="39"/>
+        <referencedby refid="testcases_8h_1a863964ae8e31d2f09aed1b5d8ef3452d" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51a_8c" startline="32" endline="107">CWE15_External_Control_of_System_or_Configuration_Setting__w32_51_bad</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51b_8c_1a993a536d8a0f2aed78f0fac34ba1f0d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b_goodG2BSink</definition>
+        <argsstring>(char *data)</argsstring>
+        <name>CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b_goodG2BSink</name>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c" line="46" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c" bodystart="46" bodyend="54"/>
+        <referencedby refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51a_8c_1a7eda1d9036806a85a3f6bf72aa50b678" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51a_8c" startline="117" endline="125">goodG2B</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c"/>
+  </compounddef>
+</doxygen>

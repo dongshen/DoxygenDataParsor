@@ -1,0 +1,11 @@
+digraph "CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::good"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node4 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_82::good",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_82::goodG2B",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__82.html#a19b4578fa8d937d3b4e38c19b17c2402"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_82::CWE15_External\l_Control_of_System_or_Configuration\l_Setting__w32_82_base::action",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exterc1630649ac00d2ff6fdc69a52bb102b2.html#a40aef2f2eba156132a053d7b4511d2c7"];
+}

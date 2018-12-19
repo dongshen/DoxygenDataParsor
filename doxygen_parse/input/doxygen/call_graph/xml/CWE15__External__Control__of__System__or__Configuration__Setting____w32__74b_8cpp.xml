@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="CWE15__External__Control__of__System__or__Configuration__Setting____w32__74b_8cpp" kind="file" language="C++">
+    <compoundname>CWE15_External_Control_of_System_or_Configuration_Setting__w32_74b.cpp</compoundname>
+    <includes local="yes">std_testcase.h</includes>
+    <includes local="no">map</includes>
+    <includes local="no">windows.h</includes>
+    <incdepgraph>
+      <node id="86">
+        <label>windows.h</label>
+      </node>
+      <node id="83">
+        <label>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_74b.cpp</label>
+        <link refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__74b_8cpp"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>map</label>
+      </node>
+      <node id="84">
+        <label>std_testcase.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__74">CWE15_External_Control_of_System_or_Configuration_Setting__w32_74</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_74b.cpp"/>
+  </compounddef>
+</doxygen>

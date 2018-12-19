@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exter08a945bf978e15c5062b7350586f418f" kind="class" language="C++" prot="public">
+    <compoundname>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B</compoundname>
+    <basecompoundref refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exterc1630649ac00d2ff6fdc69a52bb102b2" prot="public" virt="non-virtual">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_base</basecompoundref>
+    <includes refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82_8h" local="no">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exter08a945bf978e15c5062b7350586f418f_1a0be04ca3c6a1390eaeac69a178b091f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B::action</definition>
+        <argsstring>(char *data)</argsstring>
+        <name>action</name>
+        <reimplements refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exterc1630649ac00d2ff6fdc69a52bb102b2_1a40aef2f2eba156132a053d7b4511d2c7">action</reimplements>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h" line="43" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B.cpp" bodystart="26" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="21">
+        <label>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_base</label>
+        <link refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exterc1630649ac00d2ff6fdc69a52bb102b2"/>
+      </node>
+      <node id="20">
+        <label>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B</label>
+        <link refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exter08a945bf978e15c5062b7350586f418f"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="23">
+        <label>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_base</label>
+        <link refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exterc1630649ac00d2ff6fdc69a52bb102b2"/>
+      </node>
+      <node id="22">
+        <label>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B</label>
+        <link refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exter08a945bf978e15c5062b7350586f418f"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h" line="41" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h" bodystart="40" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exter08a945bf978e15c5062b7350586f418f_1a0be04ca3c6a1390eaeac69a178b091f9" prot="public" virt="virtual"><scope>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B</scope><name>action</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_750b4a0e5647d2b911228c4c680dab94" kind="dir">
+    <compoundname>example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting</compoundname>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22a.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51a_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_51a.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__51b_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_51b.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__52a_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_52a.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__52b_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_52b.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__52c_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_52c.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__53a_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_53a.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__53b_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_53b.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__53c_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_53c.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__53d_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_53d.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__54a_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_54a.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__54b_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_54b.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__54c_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_54c.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__54d_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_54d.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__54e_8c">CWE15_External_Control_of_System_or_Configuration_Setting__w32_54e.c</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__74a_8cpp">CWE15_External_Control_of_System_or_Configuration_Setting__w32_74a.cpp</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__74b_8cpp">CWE15_External_Control_of_System_or_Configuration_Setting__w32_74b.cpp</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__81_8h">CWE15_External_Control_of_System_or_Configuration_Setting__w32_81.h</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__81__bad_8cpp">CWE15_External_Control_of_System_or_Configuration_Setting__w32_81_bad.cpp</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__81__goodG2B_8cpp">CWE15_External_Control_of_System_or_Configuration_Setting__w32_81_goodG2B.cpp</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__81a_8cpp">CWE15_External_Control_of_System_or_Configuration_Setting__w32_81a.cpp</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82_8h">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82__bad_8cpp">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_bad.cpp</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82__goodG2B_8cpp">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B.cpp</innerfile>
+    <innerfile refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82a_8cpp">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82a.cpp</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="testcases_8h">testcases.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/"/>
+  </compounddef>
+</doxygen>

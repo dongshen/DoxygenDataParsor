@@ -1,0 +1,11 @@
+digraph "CWE15_External_Control_of_System_or_Configuration_Setting__w32_54c_badSink"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node15 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_54c_badSink",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_54d_badSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__54c_8c.html#af80cc0309ca5ccf26938d3fe97af0e72"];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_54e_badSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__54d_8c.html#a99a2bfd24cce003279b2e78694beb95a"];
+}

@@ -1,0 +1,15 @@
+digraph "CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_good"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node118 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_22_good",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node118 -> Node119 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node119 [label="goodG2B1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c.html#ac17d0de842dabc80fcf4a7c075312c3c"];
+  Node119 -> Node120 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node120 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_22_goodG2B1Source",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c.html#a95b1967d57f6342a39262d7e22a9a9d2"];
+  Node118 -> Node121 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node121 [label="goodG2B2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c.html#ae6b951ee594ed81470250b3195e42869"];
+  Node121 -> Node122 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node122 [label="CWE15_External_Control\l_of_System_or_Configuration\l_Setting__w32_22_goodG2B2Source",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CWE15__External__Control__of__System__or__Configuration__Setting____w32__22a_8c.html#a39c897fe0df655c77953b1038e4d6e7f"];
+}

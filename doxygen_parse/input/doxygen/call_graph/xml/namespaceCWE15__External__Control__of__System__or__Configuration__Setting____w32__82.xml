@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__82" kind="namespace" language="C++">
+    <compoundname>CWE15_External_Control_of_System_or_Configuration_Setting__w32_82</compoundname>
+    <innerclass refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exter87beb84b3a39a28f9c460c695d0a3b58" prot="public">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_bad</innerclass>
+    <innerclass refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exterc1630649ac00d2ff6fdc69a52bb102b2" prot="public">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_base</innerclass>
+    <innerclass refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exter08a945bf978e15c5062b7350586f418f" prot="public">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_goodG2B</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1a144f86ea1371f46406dd7a89f36856b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::bad</definition>
+        <argsstring>()</argsstring>
+        <name>bad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82a.cpp" line="31" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82a.cpp" bodystart="31" bodyend="108"/>
+        <references refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82a_8cpp_1a4fba0963c20988d1f1a45afb1c636e44" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82a_8cpp" startline="23">LISTEN_PORT</references>
+        <references refid="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82a_8cpp_1a848750161824c5aa011ed0442ec0863c" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82a_8cpp" startline="24">LISTEN_BACKLOG</references>
+        <references refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exterc1630649ac00d2ff6fdc69a52bb102b2_1a40aef2f2eba156132a053d7b4511d2c7">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_base::action</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="11" endline="360">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1a19b4578fa8d937d3b4e38c19b17c2402" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::goodG2B</definition>
+        <argsstring>()</argsstring>
+        <name>goodG2B</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82a.cpp" line="115" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82a.cpp" bodystart="115" bodyend="125"/>
+        <references refid="classCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1_1CWE15__Exterc1630649ac00d2ff6fdc69a52bb102b2_1a40aef2f2eba156132a053d7b4511d2c7">CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::CWE15_External_Control_of_System_or_Configuration_Setting__w32_82_base::action</references>
+        <referencedby refid="namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1a218e6c61236626250076714c9853680a" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82a_8cpp" startline="127" endline="130">good</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1a218e6c61236626250076714c9853680a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CWE15_External_Control_of_System_or_Configuration_Setting__w32_82::good</definition>
+        <argsstring>()</argsstring>
+        <name>good</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82a.cpp" line="127" column="1" bodyfile="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82a.cpp" bodystart="127" bodyend="130"/>
+        <references refid="namespaceCWE15__External__Control__of__System__or__Configuration__Setting____w32__82_1a19b4578fa8d937d3b4e38c19b17c2402" compoundref="CWE15__External__Control__of__System__or__Configuration__Setting____w32__82a_8cpp" startline="115" endline="125">goodG2B</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="11" endline="360">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_82.h" line="19" column="1"/>
+  </compounddef>
+</doxygen>
