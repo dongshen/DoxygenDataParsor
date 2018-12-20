@@ -1,6 +1,8 @@
 package sdong.doxygen.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import sdong.common.utils.StringUtil;
@@ -11,6 +13,11 @@ public class DoxygenMember implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -63345280579745357L;
+	
+	public static final String MEMBER_KIND_DEFINE = "define";
+	public static final String MEMBER_KIND_FUNCTION = "function";
+	public static final String MEMBER_KIND_VARIABLE = "variable";
+	
 	private String refid;
 	private String kind;
 	private String name;
@@ -27,6 +34,8 @@ public class DoxygenMember implements Serializable {
 	private boolean isExplicit;
 	private boolean isInline;
 	private String virt;
+
+	private List<DoxygenParam> params = new ArrayList<DoxygenParam>();
 
 	private DoxygenLocation location = new DoxygenLocation();
 
@@ -182,6 +191,14 @@ public class DoxygenMember implements Serializable {
 
 	public void setReferencedby(ConcurrentHashMap<String, DoxygenReference> referencedby) {
 		this.referencedby = referencedby;
+	}
+
+	public List<DoxygenParam> getParams() {
+		return params;
+	}
+
+	public void setParams(List<DoxygenParam> params) {
+		this.params = params;
 	}
 
 }

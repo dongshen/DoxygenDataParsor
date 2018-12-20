@@ -16,6 +16,7 @@ import sdong.common.exception.SdongException;
 import sdong.doxygen.bean.DoxygenCompound;
 import sdong.doxygen.bean.DoxygenLocation;
 import sdong.doxygen.bean.DoxygenMember;
+import sdong.doxygen.bean.DoxygenParam;
 import sdong.doxygen.bean.DoxygenReference;
 
 public class DoxygentXMLParser {
@@ -28,7 +29,7 @@ public class DoxygentXMLParser {
 		ConcurrentHashMap<String, DoxygenCompound> compoundMap = new ConcurrentHashMap<String, DoxygenCompound>();
 		DoxygenCompound compound = null;
 
-		ConcurrentHashMap<String, DoxygenMember> members = new ConcurrentHashMap<String, DoxygenMember>();
+		ConcurrentHashMap<String, DoxygenMember> members;
 		DoxygenMember member = null;
 
 		boolean isCompound = false;
@@ -63,6 +64,7 @@ public class DoxygentXMLParser {
 								compound.setKind(attributeValue);
 							}
 						}
+						compoundMap.put(compound.getRefid(), compound);
 					} else if (qName.equals("member")) {
 						isMember = true;
 						member = new DoxygenMember();
@@ -94,11 +96,9 @@ public class DoxygentXMLParser {
 				case XMLStreamConstants.END_ELEMENT:
 					qName = xmlStreamReader.getLocalName();
 					if (qName.equalsIgnoreCase("compound")) {
-						compound.setMembers(members);
-						compoundMap.put(compound.getRefid(), compound);
-						members = new ConcurrentHashMap<String, DoxygenMember>();
 						isCompound = false;
 					} else if (qName.equalsIgnoreCase("member")) {
+						members = compound.getMembers(member.getKind());
 						members.put(member.getRefid(), member);
 						isMember = false;
 					}
@@ -127,8 +127,6 @@ public class DoxygentXMLParser {
 		String refid = "";
 		int event;
 
-		boolean isCompound = false;
-		boolean isMember = false;
 		boolean isName = false;
 		boolean isMemberName = false;
 		boolean isReferencedby = false;
@@ -136,11 +134,16 @@ public class DoxygentXMLParser {
 		boolean isType = false;
 		boolean isDefinition = false;
 		boolean isArgsstring = false;
+		boolean isParam = false;
+		boolean isDclname = false;
+		String memberKind = "";
 
+		ConcurrentHashMap<String, DoxygenMember> members;
 		DoxygenMember member = null;
 		DoxygenLocation location = null;
 		DoxygenReference reference = null;
 		DoxygenReference referenceby = null;
+		DoxygenParam param = null;
 
 		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 		try {
@@ -169,33 +172,40 @@ public class DoxygentXMLParser {
 							}
 						}
 					} else if (qName.equals("memberdef")) {
-						isMember = true;
 
 						id = xmlStreamReader.getAttributeValue(null, "id");
-						if (id == null) {
-							throw new SdongException("Cant find id in memberdef!");
+						memberKind = xmlStreamReader.getAttributeValue(null, "kind");
+						if (id == null || memberKind == null) {
+							throw new SdongException("Cant find id or kind in memberdef!");
 						}
 
-						if (compound.getMembers().containsKey(id)) {
-							member = compound.getMembers().get(id);
+						members = compound.getMembers(memberKind);
+
+						if (members.containsKey(id)) {
+							member = members.get(id);
 						} else {
 							member = new DoxygenMember();
 							member.setRefid(id);
-							compound.getMembers().put(id, member);
+							member.setKind(memberKind);
+							members.put(id, member);
 						}
 
 						attributeCount = xmlStreamReader.getAttributeCount();
 						for (int i = 0; i < attributeCount; i++) {
 							attributeValue = xmlStreamReader.getAttributeValue(i);
 							attributeName = xmlStreamReader.getAttributeLocalName(i);
-							if (attributeName.equalsIgnoreCase("id")) {
-								member.setRefid(attributeValue);
-							} else if (attributeName.equalsIgnoreCase("kind")) {
-								member.setKind(attributeValue);
-							} else if (attributeName.equalsIgnoreCase("prot")) {
+							if (attributeName.equalsIgnoreCase("prot")) {
 								member.setPort(attributeValue);
 							} else if (attributeName.equalsIgnoreCase("static")) {
 								member.setStatic(attributeValue);
+							} else if (attributeName.equalsIgnoreCase("const")) {
+								member.setConst(attributeValue);
+							} else if (attributeName.equalsIgnoreCase("explicit")) {
+								member.setExplicit(attributeValue);
+							} else if (attributeName.equalsIgnoreCase("inline")) {
+								member.setInline(attributeValue);
+							} else if (attributeName.equalsIgnoreCase("virt")) {
+								member.setVirt(attributeValue);
 							}
 						}
 					} else if (qName.equals("compoundname")) {
@@ -208,6 +218,11 @@ public class DoxygentXMLParser {
 						isDefinition = true;
 					} else if (qName.equals("argsstring")) {
 						isArgsstring = true;
+					} else if (qName.equals("param")) {
+						isParam = true;
+						param = new DoxygenParam();
+					} else if (qName.equals("declname")) {
+						isDclname = true;
 					} else if (qName.equals("location")) {
 						location = member.getLocation();
 						attributeCount = xmlStreamReader.getAttributeCount();
@@ -281,7 +296,7 @@ public class DoxygentXMLParser {
 					}
 					break;
 				case XMLStreamConstants.CHARACTERS:
-					tagValue = xmlStreamReader.getText();
+					tagValue = xmlStreamReader.getText().trim();
 					if (isName == true) {
 						compound.setName(tagValue);
 						isName = false;
@@ -295,7 +310,11 @@ public class DoxygentXMLParser {
 						reference.setName(tagValue);
 						isReference = false;
 					} else if (isType == true) {
-						member.setType(tagValue);
+						if (isParam == true) {
+							param.setType(tagValue);
+						} else {
+							member.setType(tagValue);
+						}
 						isType = false;
 					} else if (isDefinition == true) {
 						member.setDefinition(tagValue);
@@ -303,13 +322,18 @@ public class DoxygentXMLParser {
 					} else if (isArgsstring == true) {
 						member.setArgsstring(tagValue);
 						isArgsstring = false;
+					} else if (isDclname == true) {
+						param.setDeclname(tagValue);
+						isDclname = false;
 					}
-
 					break;
 				case XMLStreamConstants.END_ELEMENT:
 					qName = xmlStreamReader.getLocalName();
 					if (qName.equalsIgnoreCase("memberdef")) {
-						isMember = false;
+						// isMember = false;
+					} else if (qName.equalsIgnoreCase("param")) {
+						member.getParams().add(param);
+						isParam = false;
 					}
 					break;
 				}
@@ -324,4 +348,5 @@ public class DoxygentXMLParser {
 		}
 
 	}
+
 }

@@ -16,7 +16,9 @@ public class DoxygenCompound implements Serializable {
 
 	private String language;
 
-	private ConcurrentHashMap<String, DoxygenMember> members = new ConcurrentHashMap<String, DoxygenMember>();
+	private ConcurrentHashMap<String, DoxygenMember> membersDefine = new ConcurrentHashMap<String, DoxygenMember>();
+	private ConcurrentHashMap<String, DoxygenMember> membersVariable = new ConcurrentHashMap<String, DoxygenMember>();
+	private ConcurrentHashMap<String, DoxygenMember> membersFunction = new ConcurrentHashMap<String, DoxygenMember>();
 
 	public String getRefid() {
 		return refid;
@@ -42,20 +44,55 @@ public class DoxygenCompound implements Serializable {
 		this.name = name;
 	}
 
-	public ConcurrentHashMap<String, DoxygenMember> getMembers() {
-		return members;
-	}
-
-	public void setMembers(ConcurrentHashMap<String, DoxygenMember> members) {
-		this.members = members;
-	}
-
 	public String getLanguage() {
 		return language;
 	}
 
 	public void setLanguage(String language) {
 		this.language = language;
+	}
+
+	public ConcurrentHashMap<String, DoxygenMember> getMembersDefine() {
+		return membersDefine;
+	}
+
+	public void setMembersDefine(ConcurrentHashMap<String, DoxygenMember> membersDefine) {
+		this.membersDefine = membersDefine;
+	}
+
+	public ConcurrentHashMap<String, DoxygenMember> getMembersVariable() {
+		return membersVariable;
+	}
+
+	public void setMembersVariable(ConcurrentHashMap<String, DoxygenMember> membersVariable) {
+		this.membersVariable = membersVariable;
+	}
+
+	public ConcurrentHashMap<String, DoxygenMember> getMembersFunction() {
+		return membersFunction;
+	}
+
+	public void setMembersFunction(ConcurrentHashMap<String, DoxygenMember> membersFunction) {
+		this.membersFunction = membersFunction;
+	}
+
+	public ConcurrentHashMap<String, DoxygenMember> getMembers(String memberKind) {
+		if (memberKind == null) {
+			return null;
+		}
+
+		ConcurrentHashMap<String, DoxygenMember> members;
+		if (DoxygenMember.MEMBER_KIND_FUNCTION.equals(memberKind)) {
+			members = getMembersFunction();
+		} else if (DoxygenMember.MEMBER_KIND_VARIABLE.equals(memberKind)) {
+			members = getMembersVariable();
+		} else if (DoxygenMember.MEMBER_KIND_DEFINE.equals(memberKind)) {
+			members = getMembersDefine();
+		} else {
+			return null;
+		}
+
+		return members;
 	}
 
 }
