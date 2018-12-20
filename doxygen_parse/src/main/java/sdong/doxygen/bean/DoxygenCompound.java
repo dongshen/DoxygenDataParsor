@@ -20,6 +20,8 @@ public class DoxygenCompound implements Serializable {
 	private ConcurrentHashMap<String, DoxygenMember> membersVariable = new ConcurrentHashMap<String, DoxygenMember>();
 	private ConcurrentHashMap<String, DoxygenMember> membersFunction = new ConcurrentHashMap<String, DoxygenMember>();
 
+	private DoxygenLocation location = new DoxygenLocation();
+
 	public String getRefid() {
 		return refid;
 	}
@@ -74,6 +76,14 @@ public class DoxygenCompound implements Serializable {
 
 	public void setMembersFunction(ConcurrentHashMap<String, DoxygenMember> membersFunction) {
 		this.membersFunction = membersFunction;
+	}
+
+	public DoxygenLocation getLocation() {
+		return location;
+	}
+
+	public void setLocation(DoxygenLocation location) {
+		this.location = location;
 	}
 
 	public ConcurrentHashMap<String, DoxygenMember> getMembers(String memberKind) {

@@ -1,7 +1,9 @@
 package sdong.doxygen.parser;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.xml.stream.XMLInputFactory;
@@ -13,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import sdong.common.exception.SdongException;
+import sdong.common.utils.FileUtil;
 import sdong.doxygen.bean.DoxygenCompound;
 import sdong.doxygen.bean.DoxygenLocation;
 import sdong.doxygen.bean.DoxygenMember;
@@ -23,9 +26,34 @@ public class DoxygentXMLParser {
 
 	private static final Logger logger = LoggerFactory.getLogger(DoxygentXMLParser.class);
 
+	public static ConcurrentHashMap<String, DoxygenCompound> getProjectCompound(String indexFileName) {
+		ConcurrentHashMap<String, DoxygenCompound> compoundMap = null;
+		try {
+			String folder = FileUtil.getFolderName(indexFileName);
+			DoxygenCompound compound;
+
+			// get compound list
+			compoundMap = parseDoxygenXmlIndex(indexFileName);
+
+			for (Map.Entry<String, DoxygenCompound> entry : compoundMap.entrySet()) {
+				compound = entry.getValue();
+				if (compound.getKind().equalsIgnoreCase("file")) {
+					compound = parseDoxygenXmlFile(folder + File.separatorChar + entry.getKey() + ".xml");
+					compoundMap.put(entry.getKey(), compound);
+				}
+			}
+
+		} catch (SdongException e) {
+			logger.error(e.getMessage(), e);
+		}
+
+		return compoundMap;
+
+	}
+
 	public static ConcurrentHashMap<String, DoxygenCompound> parseDoxygenXmlIndex(String fileName)
 			throws SdongException {
-
+		logger.info("Start process index file:" + fileName);
 		ConcurrentHashMap<String, DoxygenCompound> compoundMap = new ConcurrentHashMap<String, DoxygenCompound>();
 		DoxygenCompound compound = null;
 
@@ -114,10 +142,16 @@ public class DoxygentXMLParser {
 			throw new SdongException(e);
 		}
 
+		logger.info("End process index file:" + fileName);
 		return compoundMap;
 	}
 
-	public static void parseDoxygenXmlFile(String fileName, DoxygenCompound compound) throws SdongException {
+	public static DoxygenCompound parseDoxygenXmlFile(String fileName) throws SdongException {
+
+		logger.info("Start process file:" + fileName);
+
+		DoxygenCompound compound = new DoxygenCompound();
+
 		int attributeCount = 0;
 		String attributeValue = "";
 		String attributeName = "";
@@ -127,6 +161,7 @@ public class DoxygentXMLParser {
 		String refid = "";
 		int event;
 
+		boolean isMember = false;
 		boolean isName = false;
 		boolean isMemberName = false;
 		boolean isReferencedby = false;
@@ -147,9 +182,6 @@ public class DoxygentXMLParser {
 
 		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 		try {
-			if (compound == null) {
-				compound = new DoxygenCompound();
-			}
 
 			XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(new FileInputStream(fileName));
 			while (xmlStreamReader.hasNext()) {
@@ -163,7 +195,7 @@ public class DoxygentXMLParser {
 						for (int i = 0; i < attributeCount; i++) {
 							attributeValue = xmlStreamReader.getAttributeValue(i);
 							attributeName = xmlStreamReader.getAttributeLocalName(i);
-							if (attributeName.equalsIgnoreCase("refid")) {
+							if (attributeName.equalsIgnoreCase("id")) {
 								compound.setRefid(attributeValue);
 							} else if (attributeName.equalsIgnoreCase("kind")) {
 								compound.setKind(attributeValue);
@@ -172,7 +204,7 @@ public class DoxygentXMLParser {
 							}
 						}
 					} else if (qName.equals("memberdef")) {
-
+						isMember = true;
 						id = xmlStreamReader.getAttributeValue(null, "id");
 						memberKind = xmlStreamReader.getAttributeValue(null, "kind");
 						if (id == null || memberKind == null) {
@@ -224,7 +256,11 @@ public class DoxygentXMLParser {
 					} else if (qName.equals("declname")) {
 						isDclname = true;
 					} else if (qName.equals("location")) {
-						location = member.getLocation();
+						if (isMember == true) {
+							location = member.getLocation();
+						} else {
+							location = compound.getLocation();
+						}
 						attributeCount = xmlStreamReader.getAttributeCount();
 						for (int i = 0; i < attributeCount; i++) {
 							attributeValue = xmlStreamReader.getAttributeValue(i);
@@ -330,7 +366,7 @@ public class DoxygentXMLParser {
 				case XMLStreamConstants.END_ELEMENT:
 					qName = xmlStreamReader.getLocalName();
 					if (qName.equalsIgnoreCase("memberdef")) {
-						// isMember = false;
+						isMember = false;
 					} else if (qName.equalsIgnoreCase("param")) {
 						member.getParams().add(param);
 						isParam = false;
@@ -347,6 +383,9 @@ public class DoxygentXMLParser {
 			throw new SdongException(e);
 		}
 
+		logger.info("End process file:" + fileName);
+		return compound;
 	}
-
+	
+	
 }
