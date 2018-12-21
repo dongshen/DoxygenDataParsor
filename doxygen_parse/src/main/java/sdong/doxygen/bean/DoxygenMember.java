@@ -13,11 +13,14 @@ public class DoxygenMember implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -63345280579745357L;
-	
+
 	public static final String MEMBER_KIND_DEFINE = "define";
 	public static final String MEMBER_KIND_FUNCTION = "function";
 	public static final String MEMBER_KIND_VARIABLE = "variable";
-	
+	public static final String MEMBER_KIND_ENUM = "enum";
+	public static final String MEMBER_KIND_ENUMVALUE = "enumevalue";
+	public static final String MEMBER_KIND_TYPEDEF = "typedef";
+
 	private String refid;
 	private String kind;
 	private String name;

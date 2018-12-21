@@ -18,6 +18,8 @@ public class DoxygenCompound implements Serializable {
 
 	private ConcurrentHashMap<String, DoxygenMember> membersDefine = new ConcurrentHashMap<String, DoxygenMember>();
 	private ConcurrentHashMap<String, DoxygenMember> membersVariable = new ConcurrentHashMap<String, DoxygenMember>();
+	private ConcurrentHashMap<String, DoxygenMember> membersEnum = new ConcurrentHashMap<String, DoxygenMember>();
+	private ConcurrentHashMap<String, DoxygenMember> membersTypedef = new ConcurrentHashMap<String, DoxygenMember>();
 	private ConcurrentHashMap<String, DoxygenMember> membersFunction = new ConcurrentHashMap<String, DoxygenMember>();
 
 	private DoxygenLocation location = new DoxygenLocation();
@@ -78,6 +80,22 @@ public class DoxygenCompound implements Serializable {
 		this.membersFunction = membersFunction;
 	}
 
+	public ConcurrentHashMap<String, DoxygenMember> getMembersEnum() {
+		return membersEnum;
+	}
+
+	public void setMembersEnum(ConcurrentHashMap<String, DoxygenMember> membersEnum) {
+		this.membersEnum = membersEnum;
+	}
+
+	public ConcurrentHashMap<String, DoxygenMember> getMembersTypedef() {
+		return membersTypedef;
+	}
+
+	public void setMembersTypedef(ConcurrentHashMap<String, DoxygenMember> membersTypedef) {
+		this.membersTypedef = membersTypedef;
+	}
+
 	public DoxygenLocation getLocation() {
 		return location;
 	}
@@ -98,6 +116,11 @@ public class DoxygenCompound implements Serializable {
 			members = getMembersVariable();
 		} else if (DoxygenMember.MEMBER_KIND_DEFINE.equals(memberKind)) {
 			members = getMembersDefine();
+		} else if (DoxygenMember.MEMBER_KIND_TYPEDEF.equals(memberKind)) {
+			members = getMembersTypedef();
+		} else if (DoxygenMember.MEMBER_KIND_ENUM.equals(memberKind)
+				|| DoxygenMember.MEMBER_KIND_ENUMVALUE.equals(memberKind)) {
+			members = getMembersEnum();
 		} else {
 			return null;
 		}
