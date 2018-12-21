@@ -32,14 +32,14 @@ public class DoxygentXMLParserTest {
 			// verify
 			String refid = "testcases_8h";
 			assertEquals("testcases.h", compoundMap.get(refid).getName());
-			assertEquals(76, compoundMap.get(refid).getMembersFunction().size());
+			assertEquals(76, compoundMap.get(refid).getMembers(DoxygenMember.MEMBER_KIND_FUNCTION).size());
 
 			refid = "CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c";
 			assertEquals("CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c",
 					compoundMap.get(refid).getName());
-			assertEquals(3, compoundMap.get(refid).getMembersFunction().size());
-			assertEquals(3, compoundMap.get(refid).getMembersVariable().size());
-			assertEquals(2, compoundMap.get(refid).getMembersDefine().size());
+			assertEquals(3, compoundMap.get(refid).getMembers(DoxygenMember.MEMBER_KIND_FUNCTION).size());
+			assertEquals(3, compoundMap.get(refid).getMembers(DoxygenMember.MEMBER_KIND_VARIABLE).size());
+			assertEquals(2, compoundMap.get(refid).getMembers(DoxygenMember.MEMBER_KIND_DEFINE).size());
 
 		} catch (SdongException e) {
 			e.printStackTrace();
@@ -70,9 +70,9 @@ public class DoxygentXMLParserTest {
 		assertEquals("file", compound.getKind());
 		assertEquals("C++", compound.getLanguage());
 
-		assertEquals(3, compound.getMembersFunction().size());
-		assertEquals(3, compound.getMembersVariable().size());
-		assertEquals(2, compound.getMembersDefine().size());
+		assertEquals(3, compound.getMembers(DoxygenMember.MEMBER_KIND_FUNCTION).size());
+		assertEquals(3, compound.getMembers(DoxygenMember.MEMBER_KIND_VARIABLE).size());
+		assertEquals(2, compound.getMembers(DoxygenMember.MEMBER_KIND_DEFINE).size());
 		// location
 		DoxygenLocation location = compound.getLocation();
 		assertEquals(
@@ -81,7 +81,7 @@ public class DoxygentXMLParserTest {
 
 		// verify member function
 		String refid = "CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a17e4a785bc89dbd83816bb91d3e634fd";
-		DoxygenMember member = compound.getMembersFunction().get(refid);
+		DoxygenMember member = compound.getMembers(DoxygenMember.MEMBER_KIND_FUNCTION).get(refid);
 		assertEquals("function", member.getKind());
 		assertEquals("char *", member.getType());
 		assertEquals("CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_badSource", member.getName());
@@ -139,7 +139,7 @@ public class DoxygentXMLParserTest {
 
 		// verify member define
 		refid = "CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a4fba0963c20988d1f1a45afb1c636e44";
-		member = compound.getMembersDefine().get(refid);
+		member = compound.getMembers(DoxygenMember.MEMBER_KIND_DEFINE).get(refid);
 		assertEquals("define", member.getKind());
 		assertEquals("LISTEN_PORT", member.getName());
 
@@ -161,7 +161,7 @@ public class DoxygentXMLParserTest {
 
 		// verify member variable
 		refid = "CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c_1a9ecde5e997da0ec1b8bc53de67a85d0c";
-		member = compound.getMembersVariable().get(refid);
+		member = compound.getMembers(DoxygenMember.MEMBER_KIND_VARIABLE).get(refid);
 		assertEquals("variable", member.getKind());
 		assertEquals("int", member.getType());
 		assertEquals("CWE15_External_Control_of_System_or_Configuration_Setting__w32_22_goodG2B1Global",
@@ -225,5 +225,6 @@ public class DoxygentXMLParserTest {
 					+ member.getName() + ":" + member.getRefid());
 		}
 
+		assertEquals(1, topList.size());
 	}
 }

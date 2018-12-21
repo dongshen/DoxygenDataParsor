@@ -59,7 +59,6 @@ public class DoxygentXMLParser {
 		ConcurrentHashMap<String, DoxygenCompound> compoundMap = new ConcurrentHashMap<String, DoxygenCompound>();
 		DoxygenCompound compound = null;
 
-		ConcurrentHashMap<String, DoxygenMember> members;
 		DoxygenMember member = null;
 
 		boolean isCompound = false;
@@ -70,6 +69,7 @@ public class DoxygentXMLParser {
 		String attributeName = "";
 		String tagValue = "";
 		String qName = "";
+		String memberKind = "";
 		int event;
 
 		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
@@ -108,6 +108,13 @@ public class DoxygentXMLParser {
 								member.setKind(attributeValue);
 							}
 						}
+						memberKind = member.getKind();
+						if (compound.getMembers(memberKind) != null) {
+							compound.getMembers(memberKind).put(member.getRefid(), member);
+						} else {
+							throw new SdongException("Cant find kind" + memberKind);
+						}
+
 					} else if (qName.equals("name")) {
 						isName = true;
 					}
@@ -128,8 +135,6 @@ public class DoxygentXMLParser {
 					if (qName.equalsIgnoreCase("compound")) {
 						isCompound = false;
 					} else if (qName.equalsIgnoreCase("member")) {
-						members = compound.getMembers(member.getKind());
-						members.put(member.getRefid(), member);
 						isMember = false;
 					}
 					break;
@@ -214,7 +219,7 @@ public class DoxygentXMLParser {
 						}
 
 						members = compound.getMembers(memberKind);
-
+						
 						if (members.containsKey(id)) {
 							member = members.get(id);
 						} else {
