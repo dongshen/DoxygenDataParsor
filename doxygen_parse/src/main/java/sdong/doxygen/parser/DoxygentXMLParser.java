@@ -3,6 +3,8 @@ package sdong.doxygen.parser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -386,6 +388,27 @@ public class DoxygentXMLParser {
 		logger.info("End process file:" + fileName);
 		return compound;
 	}
-	
-	
+
+	public static List<DoxygenMember> getTopFunction(ConcurrentHashMap<String, DoxygenCompound> compoundMap) {
+		List<DoxygenMember> topFunction = new ArrayList<DoxygenMember>();
+
+		// get all function members in compound
+		ConcurrentHashMap<String, DoxygenMember> allFunctions = new ConcurrentHashMap<String, DoxygenMember>();
+
+		for (Map.Entry<String, DoxygenCompound> entry : compoundMap.entrySet()) {
+			if (entry.getValue().getKind().equalsIgnoreCase("file")) {
+				allFunctions.putAll(entry.getValue().getMembers(DoxygenMember.MEMBER_KIND_FUNCTION));
+			}
+		}
+
+		// get all reference
+		for (Map.Entry<String, DoxygenMember> entry : allFunctions.entrySet()) {
+			if (entry.getValue().getReferencedby().size() == 0) {
+				topFunction.add(entry.getValue());
+			}
+		}
+
+		return topFunction;
+	}
+
 }

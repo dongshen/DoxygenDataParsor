@@ -3,6 +3,7 @@ package sdong.doxygen.parser;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.junit.Test;
@@ -211,6 +212,18 @@ public class DoxygentXMLParserTest {
 		ConcurrentHashMap<String, DoxygenCompound> compoundMap = DoxygentXMLParser.getProjectCompound(indexFileName);
 		DoxygenCompound compound = compoundMap.get(refid);
 		verifyCompound(compound);
+
+	}
+
+	@Test
+	public void testGetTopFunction() {
+		String indexFileName = "input/doxygen/call_graph/xml/index.xml";
+		ConcurrentHashMap<String, DoxygenCompound> compoundMap = DoxygentXMLParser.getProjectCompound(indexFileName);
+		List<DoxygenMember> topList = DoxygentXMLParser.getTopFunction(compoundMap);
+		for (DoxygenMember member : topList) {
+			logger.info("top member: " + member.getLocation().getFile() + ":" + member.getLocation().getLine() + ":"
+					+ member.getName() + ":" + member.getRefid());
+		}
 
 	}
 }
