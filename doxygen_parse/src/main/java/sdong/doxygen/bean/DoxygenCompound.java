@@ -20,6 +20,11 @@ public class DoxygenCompound implements Serializable {
 
 	private DoxygenLocation location = new DoxygenLocation();
 
+	private ConcurrentHashMap<String, DoxygenIncType> includes = new ConcurrentHashMap<String, DoxygenIncType>();
+	private ConcurrentHashMap<String, DoxygenIncType> includedby = new ConcurrentHashMap<String, DoxygenIncType>();
+
+	private ConcurrentHashMap<String, DoxygenNode> incdepgraph = new ConcurrentHashMap<String, DoxygenNode>();
+
 	public String getRefid() {
 		return refid;
 	}
@@ -72,6 +77,38 @@ public class DoxygenCompound implements Serializable {
 		}
 
 		return member;
+	}
+
+	public ConcurrentHashMap<String, ConcurrentHashMap<String, DoxygenMember>> getMembers() {
+		return members;
+	}
+
+	public void setMembers(ConcurrentHashMap<String, ConcurrentHashMap<String, DoxygenMember>> members) {
+		this.members = members;
+	}
+
+	public ConcurrentHashMap<String, DoxygenIncType> getIncludes() {
+		return includes;
+	}
+
+	public void setIncludes(ConcurrentHashMap<String, DoxygenIncType> includes) {
+		this.includes = includes;
+	}
+
+	public ConcurrentHashMap<String, DoxygenIncType> getIncludedby() {
+		return includedby;
+	}
+
+	public void setIncludedby(ConcurrentHashMap<String, DoxygenIncType> includedby) {
+		this.includedby = includedby;
+	}
+
+	public ConcurrentHashMap<String, DoxygenNode> getIncdepgraph() {
+		return incdepgraph;
+	}
+
+	public void setIncdepgraph(ConcurrentHashMap<String, DoxygenNode> incdepgraph) {
+		this.incdepgraph = incdepgraph;
 	}
 
 }

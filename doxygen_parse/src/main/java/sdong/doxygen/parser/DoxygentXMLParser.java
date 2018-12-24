@@ -18,9 +18,13 @@ import org.slf4j.LoggerFactory;
 
 import sdong.common.exception.SdongException;
 import sdong.common.utils.FileUtil;
+import sdong.doxygen.bean.DoxygenChildNode;
 import sdong.doxygen.bean.DoxygenCompound;
+import sdong.doxygen.bean.DoxygenConstant;
+import sdong.doxygen.bean.DoxygenIncType;
 import sdong.doxygen.bean.DoxygenLocation;
 import sdong.doxygen.bean.DoxygenMember;
+import sdong.doxygen.bean.DoxygenNode;
 import sdong.doxygen.bean.DoxygenParam;
 import sdong.doxygen.bean.DoxygenReference;
 
@@ -81,7 +85,7 @@ public class DoxygentXMLParser {
 				switch (event) {
 				case XMLStreamConstants.START_ELEMENT:
 					qName = xmlStreamReader.getLocalName();
-					if (qName.equals("compound")) {
+					if (qName.equals(DoxygenConstant.COMPOUND)) {
 						isCompound = true;
 						compound = new DoxygenCompound();
 						attributeCount = xmlStreamReader.getAttributeCount();
@@ -95,7 +99,7 @@ public class DoxygentXMLParser {
 							}
 						}
 						compoundMap.put(compound.getRefid(), compound);
-					} else if (qName.equals("member")) {
+					} else if (qName.equals(DoxygenConstant.MEMBER)) {
 						isMember = true;
 						member = new DoxygenMember();
 						attributeCount = xmlStreamReader.getAttributeCount();
@@ -132,9 +136,9 @@ public class DoxygentXMLParser {
 					break;
 				case XMLStreamConstants.END_ELEMENT:
 					qName = xmlStreamReader.getLocalName();
-					if (qName.equalsIgnoreCase("compound")) {
+					if (qName.equalsIgnoreCase(DoxygenConstant.COMPOUND)) {
 						isCompound = false;
-					} else if (qName.equalsIgnoreCase("member")) {
+					} else if (qName.equalsIgnoreCase(DoxygenConstant.MEMBER)) {
 						isMember = false;
 					}
 					break;
@@ -168,6 +172,10 @@ public class DoxygentXMLParser {
 		String refid = "";
 		int event;
 
+		boolean isIncludes = false;
+		boolean isIncludedby = false;
+		boolean isNode = false;
+		boolean isLabel = false;
 		boolean isMember = false;
 		boolean isName = false;
 		boolean isMemberName = false;
@@ -180,6 +188,10 @@ public class DoxygentXMLParser {
 		boolean isDclname = false;
 		String memberKind = "";
 
+		DoxygenIncType include = null;
+		DoxygenIncType includedby = null;
+		DoxygenNode node = null;
+		DoxygenChildNode childNode = null;
 		ConcurrentHashMap<String, DoxygenMember> members;
 		DoxygenMember member = null;
 		DoxygenLocation location = null;
@@ -197,7 +209,7 @@ public class DoxygentXMLParser {
 				switch (event) {
 				case XMLStreamConstants.START_ELEMENT:
 					qName = xmlStreamReader.getLocalName();
-					if (qName.equals("compounddef")) {
+					if (qName.equals(DoxygenConstant.COMPOUND_DEF)) {
 						attributeCount = xmlStreamReader.getAttributeCount();
 						for (int i = 0; i < attributeCount; i++) {
 							attributeValue = xmlStreamReader.getAttributeValue(i);
@@ -210,7 +222,69 @@ public class DoxygentXMLParser {
 								compound.setLanguage(attributeValue);
 							}
 						}
-					} else if (qName.equals("memberdef")) {
+					} else if (qName.equals(DoxygenConstant.COMPOUND_NAME)) {
+						isName = true;
+					} else if (qName.equals(DoxygenConstant.COMPOUND_INCLUDES)) {
+						isIncludes = true;
+						include = new DoxygenIncType();
+						attributeCount = xmlStreamReader.getAttributeCount();
+						for (int i = 0; i < attributeCount; i++) {
+							attributeValue = xmlStreamReader.getAttributeValue(i);
+							attributeName = xmlStreamReader.getAttributeLocalName(i);
+							if (attributeName.equalsIgnoreCase("local")) {
+								include.setLocal(attributeValue);
+							} else if (attributeName.equalsIgnoreCase("refid")) {
+								include.setRefid(attributeValue);
+							}
+						}
+					} else if (qName.equals(DoxygenConstant.COMPOUND_INCLUDEDBY)) {
+						isIncludedby = true;
+						includedby = new DoxygenIncType();
+						attributeCount = xmlStreamReader.getAttributeCount();
+						for (int i = 0; i < attributeCount; i++) {
+							attributeValue = xmlStreamReader.getAttributeValue(i);
+							attributeName = xmlStreamReader.getAttributeLocalName(i);
+							if (attributeName.equalsIgnoreCase("local")) {
+								includedby.setLocal(attributeValue);
+							} else if (attributeName.equalsIgnoreCase("refid")) {
+								includedby.setRefid(attributeValue);
+							}
+						}
+					} else if (qName.equals(DoxygenConstant.COMPOUND_INCDEPGRAPH_NODE)) {
+						isNode = true;
+						node = new DoxygenNode();
+						attributeCount = xmlStreamReader.getAttributeCount();
+						for (int i = 0; i < attributeCount; i++) {
+							attributeValue = xmlStreamReader.getAttributeValue(i);
+							attributeName = xmlStreamReader.getAttributeLocalName(i);
+							if (attributeName.equalsIgnoreCase("id")) {
+								node.setId(attributeValue);
+							}
+						}
+					} else if (qName.equals("label")) {
+						isLabel = true;
+					} else if (qName.equals("link")) {
+						attributeCount = xmlStreamReader.getAttributeCount();
+						for (int i = 0; i < attributeCount; i++) {
+							attributeValue = xmlStreamReader.getAttributeValue(i);
+							attributeName = xmlStreamReader.getAttributeLocalName(i);
+							if (attributeName.equalsIgnoreCase("refid")) {
+								node.setRefid(attributeValue);
+							} 
+						}	
+					} else if (qName.equals(DoxygenConstant.COMPOUND_INCDEPGRAPH_NODE_CHILDNODE)) {
+						childNode = new DoxygenChildNode();
+						attributeCount = xmlStreamReader.getAttributeCount();
+						for (int i = 0; i < attributeCount; i++) {
+							attributeValue = xmlStreamReader.getAttributeValue(i);
+							attributeName = xmlStreamReader.getAttributeLocalName(i);
+							if (attributeName.equalsIgnoreCase("refid")) {
+								childNode.setRefid(attributeValue);
+							}else if (attributeName.equalsIgnoreCase("relation")) {
+								childNode.setRelation(attributeValue);
+							}  
+						}						
+					} else if (qName.equals(DoxygenConstant.MEMBER_DEF)) {
 						isMember = true;
 						id = xmlStreamReader.getAttributeValue(null, "id");
 						memberKind = xmlStreamReader.getAttributeValue(null, "kind");
@@ -219,7 +293,7 @@ public class DoxygentXMLParser {
 						}
 
 						members = compound.getMembers(memberKind);
-						
+
 						if (members.containsKey(id)) {
 							member = members.get(id);
 						} else {
@@ -247,10 +321,8 @@ public class DoxygentXMLParser {
 								member.setVirt(attributeValue);
 							}
 						}
-					} else if (qName.equals("compoundname")) {
-						isName = true;
 					} else if (qName.equals("name")) {
-						isMemberName = true;
+						isMemberName = true;				
 					} else if (qName.equals("type")) {
 						isType = true;
 					} else if (qName.equals("definition")) {
@@ -286,7 +358,7 @@ public class DoxygentXMLParser {
 								location.setBodyend(attributeValue);
 							}
 						}
-					} else if (qName.equals("referencedby")) {
+					} else if (qName.equals(DoxygenConstant.MEMBER_REFERENCEDBY)) {
 						isReferencedby = true;
 						refid = xmlStreamReader.getAttributeValue(null, "refid");
 						if (refid == null) {
@@ -312,7 +384,7 @@ public class DoxygentXMLParser {
 								referenceby.setEndline(attributeValue);
 							}
 						}
-					} else if (qName.equals("references")) {
+					} else if (qName.equals(DoxygenConstant.MEMBER_REFERENCE)) {
 						isReference = true;
 						refid = xmlStreamReader.getAttributeValue(null, "refid");
 						if (refid == null) {
@@ -343,6 +415,17 @@ public class DoxygentXMLParser {
 					if (isName == true) {
 						compound.setName(tagValue);
 						isName = false;
+					} else if (isIncludes == true) {
+						isIncludes = false;
+						include.setName(tagValue);
+						compound.getIncludes().put(include.getName(), include);
+					} else if (isIncludedby == true) {
+						isIncludedby = false;
+						includedby.setName(tagValue);
+						compound.getIncludedby().put(includedby.getName(), includedby);
+					} else if (isLabel == true) {
+						isLabel = false;
+						node.setLabel(tagValue);						
 					} else if (isMemberName == true) {
 						member.setName(tagValue);
 						isMemberName = false;
@@ -372,8 +455,13 @@ public class DoxygentXMLParser {
 					break;
 				case XMLStreamConstants.END_ELEMENT:
 					qName = xmlStreamReader.getLocalName();
-					if (qName.equalsIgnoreCase("memberdef")) {
+					if (qName.equalsIgnoreCase(DoxygenConstant.MEMBER_DEF)) {
 						isMember = false;
+					} else if (qName.equalsIgnoreCase(DoxygenConstant.COMPOUND_INCDEPGRAPH_NODE)) {
+						compound.getIncdepgraph().put(node.getId(), node);
+						isNode = false;
+					} else if (qName.equalsIgnoreCase(DoxygenConstant.COMPOUND_INCDEPGRAPH_NODE_CHILDNODE)) {
+						node.getChildNodes().put(childNode.getRefid(), childNode);
 					} else if (qName.equalsIgnoreCase("param")) {
 						member.getParams().add(param);
 						isParam = false;

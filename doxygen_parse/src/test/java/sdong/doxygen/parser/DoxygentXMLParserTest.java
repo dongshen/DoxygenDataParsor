@@ -70,9 +70,24 @@ public class DoxygentXMLParserTest {
 		assertEquals("file", compound.getKind());
 		assertEquals("C++", compound.getLanguage());
 
+		// includes
+		assertEquals(2, compound.getIncludes().size());
+		assertEquals(true, compound.getIncludes().get("std_testcase.h").isLocal());
+		assertEquals(false, compound.getIncludes().get("winsock2.h").isLocal());
+
 		assertEquals(3, compound.getMembers(DoxygenMember.MEMBER_KIND_FUNCTION).size());
 		assertEquals(3, compound.getMembers(DoxygenMember.MEMBER_KIND_VARIABLE).size());
 		assertEquals(2, compound.getMembers(DoxygenMember.MEMBER_KIND_DEFINE).size());
+		
+		//incdepgraph
+		assertEquals(3, compound.getIncdepgraph().size());
+		
+		assertEquals("winsock2.h", compound.getIncdepgraph().get("6").getLabel());
+		assertEquals("std_testcase.h", compound.getIncdepgraph().get("5").getLabel());
+		assertEquals("example/CWE/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__w32_22b.c", compound.getIncdepgraph().get("4").getLabel());
+		assertEquals("CWE15__External__Control__of__System__or__Configuration__Setting____w32__22b_8c", compound.getIncdepgraph().get("4").getRefid());
+		assertEquals(2, compound.getIncdepgraph().get("4").getChildNodes().size());
+		
 		// location
 		DoxygenLocation location = compound.getLocation();
 		assertEquals(
